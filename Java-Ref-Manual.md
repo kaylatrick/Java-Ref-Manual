@@ -7,7 +7,6 @@ Ex: '4' is a value being assigned to variable x below.
 var x = 4;
 
 ## operations //L
-
 ## variables //T
 A variable is a piece of memory that store a data value.
 Example:
@@ -28,7 +27,6 @@ If / else statements are conditional statements. The condition must be true in o
   }
 
 ## while //L
-
 ## for //T
 The for statement (Loop) provides a compact way to iterate over a range of
 values until a particular condition is met.
@@ -54,7 +52,6 @@ Count is: 3
 - char
 
 ## reference types //L
-
 ## classes / instances //T
 A class is nothing but a blueprint or a template for creating different objects which defines
 its properties and behaviors.
@@ -87,7 +84,6 @@ class Cat {
 }
 
 ## instance methods //L
-
 ## static fields //T
 Static fields are used to share information among multiple objects of a class.
 A static field of a class is often referred to as a class variable because static
@@ -132,7 +128,6 @@ public static Connection insertConnect() {
 }
 
 ## this //L
-
 ## constructors //T
 A constructor is used to initialize the object.  A constuctor looks like a method and is
 sometimes called a constructor method.
@@ -188,7 +183,6 @@ class Cat {
 }
 
 ## inheritance //L
-
 ## super //T
 The super keyword in java is a reference variable which is used to refer immediate
 parent class object. Whenever you create the instance of subclass, an instance
@@ -232,7 +226,6 @@ class Cheetah extends Animal {
 }
 
 ## overriding //L
-
 ## packages //T
 A java package is a group of similar types of classes, interfaces and sub-packages.
 Package in java can be categorized in two form, built-in package and user-defined package.
@@ -252,7 +245,6 @@ class Mainecoon implements Cat {
 
 }
 
-
 ## casting //L
 ## instanceof operator //T
 The instanceof operator is used to test whether the object is an instance of the specified type
@@ -270,9 +262,61 @@ Example:
 ## arrays //K
 ## the uses of . [] {} ; //L
 ## access modifiers (public, private, protected) //T
+Access modifiers determine control accessibility to classes, interfaces, fields,
+constructors and methods.
+1. The access modifier "public" is used to make a class member visible to the world.
+For example:
+ public class Dog {
+    public String name;
+
+     public void bark() {
+        System.out.print("Gow Gow!");
+    }
+}
+2. The access modifier "protected" is used to make a class member protected
+that can only be accessed within its own package.
+For Example:
+package animal;
+
+public class Dog {
+    protected void waveTail() {
+        System.out.print("Waving my tail...");
+    }
+}
+3. The access modifier "private" is only accessiable from within the enclosing class.  
+No Nothing outside the class can access a private member.
+For Example:
+package animal;
+
+public class Dog {
+
+    private String breed;
+
+    public Dog() {
+        breed = "Bull";
+    }
+}
+
 ## exceptions //K
 ## generics //L
 ## abstract classes, abstract methods //T
+An abstract class is a class that is declared abstract—it may or may not include abstract methods.
+Abstract classes cannot be instantiated, but they can be subclassed.
+An abstract method is a method that is declared without an implementation (without braces,
+and followed by a semicolon), like this:
+For Example:
+1. Declaration using abstract keyword
+   abstract class AbstractDemo{
+2. Concrete method: body and braces
+   public void myMethod(){
+      //Statements here
+   }
+3. Abstract method: without body and braces
+   abstract public void anotherMethod();
+}
+
 ## enums //K
 ## anonymous inner classes, lambdas //L
 ## important classes of the standard library //T
+The most important classes are Object, which is the root of the class hierarchy,
+and Class, instances of which represent classes at run time.
