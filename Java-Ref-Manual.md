@@ -42,14 +42,14 @@ Count is: 3
 
 ## primitive types //K
 
-- int
-- boolean: true/false
-- long:
-- short
-- byte:
-- float
-- double
-- char
+- int: 32 bit signed integer
+- boolean: true or false
+- long: 64 bit unsigned integer
+- short: 16 bit signed integer
+- byte: 8 bit signed integer
+- float: 32 bit floating point
+- double: 64 bit floating point
+- char: 16 bit unsigned integer
 
 ## reference types //L
 ## classes / instances //T
@@ -260,6 +260,13 @@ Example:
 }  
 
 ## arrays //K
+used to store a collection of data/variables of the same type; the length of an array in Java is fixed
+
+Example:
+int[] size = {2, 5, 10, 12, 0, 4};
+
+System.out.println(size[1]); //returns 5
+
 ## the uses of . [] {} ; //L
 ## access modifiers (public, private, protected) //T
 Access modifiers determine control accessibility to classes, interfaces, fields,
@@ -298,6 +305,10 @@ public class Dog {
 }
 
 ## exceptions //K
+two types of exceptions in Java: checked exceptions and unchecked exceptions
+- checked exceptions: inherit from the Exceptions class; user is required to check for these exception in the code (otherwise, there will be an error); Example: SQLException
+- unchecked exceptions: user is not required to check for exceptions under Runtime Exceptions (another class under the Exceptions class); Example: NullPointerException
+
 ## generics //L
 ## abstract classes, abstract methods //T
 An abstract class is a class that is declared abstract—it may or may not include abstract methods.
@@ -316,6 +327,14 @@ For Example:
 }
 
 ## enums //K
+similar to a class, but you can define instance names instead of writing a new instance each time;
+
+Example:
+enum MonthOfYear {
+  JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
+  //fields&methods can follow
+}
+
 ## anonymous inner classes, lambdas //L
 ## important classes of the standard library //T
 The most important classes are Object, which is the root of the class hierarchy,
