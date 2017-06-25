@@ -7,6 +7,7 @@ Ex: '4' is a value being assigned to variable x below.
 var x = 4;
 
 ## operations //L
+Java operations are instructions that can read and write the values of variables, perform arithmetic on variables, and control the program flow.
 ## variables //T
 A variable is a piece of memory that store a data value.
 Example:
@@ -27,6 +28,14 @@ If / else statements are conditional statements. The condition must be true in o
   }
 
 ## while //L
+Java while loops execute a block of code while a certain condition is true.
+Example:
+int amount = 0;
+while(amount < 10) {
+    System.out.println("amount is " + amount);
+    amount++;
+}
+
 ## for //T
 The for statement (Loop) provides a compact way to iterate over a range of
 values until a particular condition is met.
@@ -52,6 +61,12 @@ Count is: 3
 - char
 
 ## reference types //L
+A reference type is a data type that’s based on a class rather than on one of the primitive types that are built in to the Java language. The class can be a class that’s provided as part of the Java API class library or a class that you write yourself.
+Example:
+Ball b = new Ball();
+
+This refers to a new instance of the class Ball.
+
 ## classes / instances //T
 A class is nothing but a blueprint or a template for creating different objects which defines
 its properties and behaviors.
@@ -84,6 +99,9 @@ class Cat {
 }
 
 ## instance methods //L
+Instance methods are all of the methods contained within an object.  For example if I have Cat class with methods eat() and scratch() and I create an instance of Cat:  Cat bob = new Cat();
+Then instance of Cat bob also has the methods eat() and scratch().
+
 ## static fields //T
 Static fields are used to share information among multiple objects of a class.
 A static field of a class is often referred to as a class variable because static
@@ -128,6 +146,20 @@ public static Connection insertConnect() {
 }
 
 ## this //L
+ "this" works as a reference to the current Object whose Method or constructor is being invoked. The "this" keyword can be used to refer to any member of the current object from within an instance Method or a constructor.
+Example:
+ public class User {
+	String userName;
+	String password;
+	String email;
+	int userID;
+	public User(String userName, String password, String email, int userID) {
+		this.userName = userName;
+		this.password = password;
+		this.email = email;
+		this.userID = userID;
+	}
+
 ## constructors //T
 A constructor is used to initialize the object.  A constuctor looks like a method and is
 sometimes called a constructor method.
@@ -183,6 +215,12 @@ class Cat {
 }
 
 ## inheritance //L
+Inheritance is a mechanism wherein a new class is derived from an existing class. In Java, classes may inherit or acquire the properties and methods of other classes. A class derived from another class is called a subclass, whereas the class from which a subclass is derived is called a superclass. A subclass can have only one superclass, whereas a superclass may have one or more subclasses. The keyword “extends” is used to derive a subclass from the superclass.
+Example:
+class Reptile extends Animal{
+  //body can contain properties and methods from Animal as well as properties and methods unique to Reptile.
+}
+
 ## super //T
 The super keyword in java is a reference variable which is used to refer immediate
 parent class object. Whenever you create the instance of subclass, an instance
@@ -226,6 +264,19 @@ class Cheetah extends Animal {
 }
 
 ## overriding //L
+Overriding, used in inheritance, enables a child class to provide different implementation for a method that is already defined and/or implemented in its parent class. The overriden method in the child class should have the same name, signature, and parameters as the one in its parent class.
+
+class Animal {
+   public void move() {
+      System.out.println("Animals can move");
+   }
+}
+
+class Dog extends Animal {
+   public void move() {
+      System.out.println("Dogs can walk and run");
+   }
+}
 ## packages //T
 A java package is a group of similar types of classes, interfaces and sub-packages.
 Package in java can be categorized in two form, built-in package and user-defined package.
@@ -246,6 +297,24 @@ class Mainecoon implements Cat {
 }
 
 ## casting //L
+Casting is a process of converting one type, which could be a class or interface to another. According to the rules of the Java programming language, only classes or interfaces (collectively known as Type) from the same type hierarchy can be cast or converted into each other.
+
+Example of an incorrect cast:
+ArrayList names = new ArrayList();
+names.add("abcd"); //adding String
+names.add(1);   //adding Integer
+
+String name = (String) names.get(0); //OK
+name = (String) names.get(1); // throw ClassCastException because you can not convert Integer to String
+
+Example of an incorrect cast:
+ArrayList numbers = new ArrayList();
+names.add(4.5); //adding float
+names.add(1);   //adding Integer
+
+float n1 = (float) numbers.get(0); //OK
+n1 = (float) numbers.get(1); // This is also acceptable because Float and Integer are in the same hierarchy.
+
 ## instanceof operator //T
 The instanceof operator is used to test whether the object is an instance of the specified type
 (class or subclass or interface). The instanceof is also known as type comparison
@@ -261,6 +330,29 @@ Example:
 
 ## arrays //K
 ## the uses of . [] {} ; //L
+  .
+  - accessing/calling methods e.g. dog.run()
+  - connecting a class name to one of its static fields e.g. System.out
+
+  []
+  - creating an array (var a = [1,2])
+  - access/assign to indexes of arrays (a[0] = 4;)
+  - acess/assign to key of object (O["I'm a key"] = 4;)
+
+  {}
+  - body of loops/if else
+  - body of a class
+  - body of a method
+
+  ;
+  - end of statement without a body
+  - separation between condition and pre-condition (for(var i = 0; i < 6; i++))
+
+  ()
+  - surrounds conditions
+  - overriding order of operations
+  - calling a function/methods (surrounds args)
+  - surrounding parameters
 ## access modifiers (public, private, protected) //T
 Access modifiers determine control accessibility to classes, interfaces, fields,
 constructors and methods.
@@ -299,6 +391,12 @@ public class Dog {
 
 ## exceptions //K
 ## generics //L
+A generic type is a class or interface that is parameterized over types.
+Example:
+ArrayList<String> names = new ArrayList<String>();
+names.add("abcd"); //adding String
+names.add(1);   //This will throw an error because it is type Integer and the ArrayList only accepts type String.
+
 ## abstract classes, abstract methods //T
 An abstract class is a class that is declared abstract—it may or may not include abstract methods.
 Abstract classes cannot be instantiated, but they can be subclassed.
@@ -317,6 +415,36 @@ For Example:
 
 ## enums //K
 ## anonymous inner classes, lambdas //L
+An anonymous inner class is an inner class declared without a class name. Anonymous inner classes are used whenever you need to override the method of a class or an interface.
+Example:
+abstract class AnonymousInner {
+   public abstract void mymethod();
+}
+public class Outer_class {
+   public static void main(String args[]) {
+      AnonymousInner inner = new AnonymousInner() {
+         public void mymethod() {
+            System.out.println("This is an example of anonymous inner class");
+         }
+      };
+      inner.mymethod();
+   }
+}
+
+A Java lambda expression is like an anonymous inner class with only a single methods. A lambda expression can be passed around as if it was an object and executed on demand.
+Here is the above example as a lambda expression:
+abstract class AnonymousInner {
+   public abstract void mymethod();
+}
+public class Outer_class {
+   public static void main(String args[]) {
+      AnonymousInner inner = () -> {
+            System.out.println("This is an example of a lambda.");
+         };
+      inner.mymethod();
+   }
+}
+
 ## important classes of the standard library //T
 The most important classes are Object, which is the root of the class hierarchy,
 and Class, instances of which represent classes at run time.
