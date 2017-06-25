@@ -51,14 +51,14 @@ Count is: 3
 
 ## primitive types //K
 
-- int
-- boolean: true/false
-- long:
-- short
-- byte:
-- float
-- double
-- char
+- int: 32 bit signed integer
+- boolean: true or false
+- long: 64 bit unsigned integer
+- short: 16 bit signed integer
+- byte: 8 bit signed integer
+- float: 32 bit floating point
+- double: 64 bit floating point
+- char: 16 bit unsigned integer
 
 ## reference types //L
 A reference type is a data type that’s based on a class rather than on one of the primitive types that are built in to the Java language. The class can be a class that’s provided as part of the Java API class library or a class that you write yourself.
@@ -329,6 +329,13 @@ Example:
 }  
 
 ## arrays //K
+used to store a collection of data/variables of the same type; the length of an array in Java is fixed
+
+Example:
+int[] size = {2, 5, 10, 12, 0, 4};
+
+System.out.println(size[1]); //returns 5
+
 ## the uses of . [] {} ; //L
   .
   - accessing/calling methods e.g. dog.run()
@@ -390,6 +397,10 @@ public class Dog {
 }
 
 ## exceptions //K
+two types of exceptions in Java: checked exceptions and unchecked exceptions
+- checked exceptions: inherit from the Exceptions class; user is required to check for these exception in the code (otherwise, there will be an error); Example: SQLException
+- unchecked exceptions: user is not required to check for exceptions under Runtime Exceptions (another class under the Exceptions class); Example: NullPointerException
+
 ## generics //L
 A generic type is a class or interface that is parameterized over types.
 Example:
@@ -414,6 +425,14 @@ For Example:
 }
 
 ## enums //K
+similar to a class, but you can define instance names instead of writing a new instance each time;
+
+Example:
+enum MonthOfYear {
+  JANUARY, FEBRUARY, MARCH, APRIL, MAY, JUNE, JULY, AUGUST, SEPTEMBER, OCTOBER, NOVEMBER, DECEMBER;
+  //fields&methods can follow
+}
+
 ## anonymous inner classes, lambdas //L
 An anonymous inner class is an inner class declared without a class name. Anonymous inner classes are used whenever you need to override the method of a class or an interface.
 Example:
